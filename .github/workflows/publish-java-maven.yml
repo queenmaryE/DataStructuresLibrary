@@ -1,0 +1,42 @@
+name: Publish Java Package to GitHub Packages
+
+on:
+  push:
+    branches:
+      - master  # Runs when you push to the master branch
+  release:
+    types: [created]  # Runs when you create a new release
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          server-id: github
+          settings-path: ${{ github.workspace }}
+
+      - name: Configure GitHub Packages Authentication
+        run: |
+          mkdir -p ~/.m2
+          echo "<settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${{ secrets.JAVA_TOKEN }}</username>
+                <password>${{ secrets.JAVA_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>" > ~/.m2/settings.xml
+
+      - name: Build and Deploy
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.JAVA_TOKEN }}
