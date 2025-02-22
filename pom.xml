@@ -4,8 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.queenmaryE</groupId>
-    <artifactId>DataStructuresLibrary</artifactId>
+    <groupId>com.github.queenmaryE.datastructureslibrary</groupId>    <artifactId>DataStructuresLibrary</artifactId>
     <version>1.0.7</version>
 
     <properties>
@@ -14,24 +13,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- GitHub Packages Repository Configuration -->
-    <repositories>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/queenmaryE/DataStructuresLibrary</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+    <packaging>jar</packaging>
 
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub queenmaryE Apache Maven Packages</name>
+            <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/queenmaryE/DataStructuresLibrary</url>
         </repository>
     </distributionManagement>
