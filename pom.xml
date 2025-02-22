@@ -6,7 +6,7 @@
 
     <groupId>com.github.queenmaryE</groupId>
     <artifactId>DataStructuresLibrary</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -18,7 +18,7 @@
     <repositories>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/queenmaryE/DataStructuresLibrary</url>  <!-- ✅ Correct -->
+            <url>https://maven.pkg.github.com/queenmaryE/DataStructuresLibrary</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
