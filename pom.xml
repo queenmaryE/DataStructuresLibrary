@@ -46,4 +46,10 @@
         </plugins>
     </build>
 
+    <scm>
+        <connection>scm:git:git://github.com/queenmaryE/DataStructuresLibrary.git</connection>
+        <developerConnection>scm:git:ssh://github.com:queenmaryE/DataStructuresLibrary.git</developerConnection>
+        <url>https://github.com/queenmaryE/DataStructuresLibrary</url>
+    </scm>
+
 </project>
